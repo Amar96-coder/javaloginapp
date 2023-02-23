@@ -1,0 +1,15 @@
+# repos:
+# -   repo: local
+#     hooks:
+#     -   id: detect-secrets
+#         name: Detect secrets
+#         language: python
+#         entry: detect-secrets-hook
+#         args: ['--baseline', '.secrets.baseline']
+repos:
+-   repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+    -   id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: package.lock.json
